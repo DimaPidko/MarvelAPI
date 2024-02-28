@@ -10,14 +10,11 @@ import mjolnir from '../../resources/img/mjolnir.png';
 import MarvelService from '../../services/MarvelService';
 
 class RandomChar extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			char: {},
-			loading: true,
-			error: false,
-		};
-	}
+	state = {
+		char: {},
+		loading: true,
+		error: false,
+	};
 
 	marvelService = new MarvelService();
 
