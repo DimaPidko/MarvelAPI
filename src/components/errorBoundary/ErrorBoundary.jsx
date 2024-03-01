@@ -1,29 +1,24 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { Component } from 'react';
+import { useState } from 'react';
 import Error from '../error/Error';
 
-class ErrorBoundary extends Component {
-	state = {
-		error: false,
-	};
+const ErrorBoundary = (props) => {
+	const [error, setError] = useState(false);
 
 	// static getDerivedStateFromError(error) {
 	// 	return { error: true };
 	// }
 
-	componentDidCatch(err, info) {
+	const componentDidCatch = (err, info) => {
 		console.log(err, info);
-		this.setState({ error: true });
-	}
+		setError(true);
+	};
 
-	render() {
-		if (this.state.error) {
-			return <Error />;
-		}
-
-		return this.props.children;
+	if (error) {
+		return <Error />;
 	}
-}
+	return props.children;
+};
 
 export default ErrorBoundary;
