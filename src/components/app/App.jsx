@@ -1,12 +1,9 @@
 import { useState } from 'react';
 
 import AppHeader from '../appHeader/AppHeader';
-import RandomChar from '../randomChar/RandomChar';
-import CharList from '../charList/CharList';
-import CharInfo from '../charInfo/CharInfo';
-import ErrorBoundary from '../errorBoundary/ErrorBoundary';
 
 import decoration from '../../resources/img/vision.png';
+import Router from '../router/Router';
 
 const App = () => {
     const [selectedChar, setChar] = useState(null);
@@ -18,7 +15,12 @@ const App = () => {
     return (
         <div className="app">
             <AppHeader />
-            <main>
+            <Router
+                onCharSelected={onCharSelected}
+                selectedChar={selectedChar}
+                decoration={decoration}
+            />
+            {/* <main>
                 <ErrorBoundary>
                     <RandomChar />
                 </ErrorBoundary>
@@ -35,7 +37,7 @@ const App = () => {
                     src={decoration}
                     alt="vision"
                 />
-            </main>
+            </main> */}
         </div>
     );
 };
