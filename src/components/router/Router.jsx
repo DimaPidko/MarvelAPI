@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Characters from '../app/Characters';
+import Comics from '../app/Comics';
 
 const Router = (props) => {
     return (
@@ -16,6 +17,10 @@ const Router = (props) => {
                             charId={props.charId}
                         />
                     }
+                />
+                <Route
+                    path="/comics"
+                    element={<Comics />}
                 />
             </Routes>
         </BrowserRouter>
