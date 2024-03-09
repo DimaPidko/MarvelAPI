@@ -20,24 +20,6 @@ const App = () => {
                 selectedChar={selectedChar}
                 decoration={decoration}
             />
-            {/* <main>
-                <ErrorBoundary>
-                    <RandomChar />
-                </ErrorBoundary>
-                <div className="char__content">
-                    <ErrorBoundary>
-                        <CharList onCharSelected={onCharSelected} />
-                    </ErrorBoundary>
-                    <ErrorBoundary>
-                        <CharInfo charId={selectedChar} />
-                    </ErrorBoundary>
-                </div>
-                <img
-                    className="bg-decoration"
-                    src={decoration}
-                    alt="vision"
-                />
-            </main> */}
         </div>
     );
 };
